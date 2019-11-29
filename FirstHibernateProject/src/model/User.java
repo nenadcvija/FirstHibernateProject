@@ -21,7 +21,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "korisnik")
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 /* Ovo je samo za Single table strategy
  * @DiscriminatorColumn(name = "Vrsta_usera", discriminatorType =
  * DiscriminatorType.STRING)
@@ -29,7 +29,7 @@ import javax.persistence.Table;
 public class User {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int idUser;
 	@Column(name = "user_name")
 	private String userName;
